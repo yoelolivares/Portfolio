@@ -1,0 +1,466 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans')
+
+//colors
+$primary: #27455b
+$secondary: #333333
+$sectionTitle: rgba(173, 173, 173, 0.28)
+$lightwhite: #c4c5c5
+$darkwhite: #adadad
+$orange: #ff6800
+   
+   
+*
+   margin: 0
+   padding: 0
+
+body
+   -webkit-font-smoothing: antialiased
+   -moz-osx-font-smoothing: grayscale
+   text-rendering: optimizeLegibility
+   box-sizing: border-box
+   font-family: 'Work Sans', sans-serif
+
+img
+   max-width: 100%
+ul
+   list-style-type: none
+.clearfix::after 
+   content: "."
+   display: block
+   height: 0
+   clear: both
+   visibility: hidden
+.hr 
+   width: 50px
+   height: 3px
+   position: absolute
+   left: 0
+   bottom: 9px
+   display: inline-block
+   background-color: #ff6800
+.uppercase-orange
+   color: $orange
+   text-transform: uppercase
+.col
+   width: 50%
+   float: left
+   padding: 20px
+   box-sizing: border-box
+.transition-fadeOut
+   transition: .5s
+   opacity: 1
+html.is-animating .transition-fadeOut
+   opacity: 0
+.transition-fade
+   transition: .4s
+   opacity: 1
+html.is-animating .transition-fade
+   opacity: 0
+   transform: translateX(-100px)
+.transition-left
+   transition: .4s
+   transform: translateX(0) 
+html.is-animating .transition-left
+   opacity: 0
+   transform: translateX(-100px)    
+/*------------------------------------
+   Navigation
+   ------------------------------------*/
+.nav-btn-wrapper
+   position: absolute
+   top: 10px
+   right: 10px
+   cursor: pointer
+   z-index: 9000
+   .nav-btn 
+      width: 50px
+      height: 50px
+      position: relative
+   .line 
+      position: absolute 
+      height: 3px 
+      width: 100% 
+      background: #11496d 
+      transition: all cubic-bezier(0.26, 0.1, 0.27, 1.55) 0.35s 
+      &.switch 
+         background: #CACBCC 
+   .top 
+      top: 18% 
+   .middle 
+      top: 48% 
+   .bottom 
+      top: 78% 
+   .icon 
+      &.close 
+         .top 
+            transform: rotate(45deg) 
+            top: 48% 
+   .icon.close .middle, .icon.close .bottom 
+      transform: rotate(-45deg) 
+      top: 48%
+.right
+   left: 0
+nav
+   -moz-transition: all ease-in-out .3s
+   -o-transition: all ease-in-out .3s
+   -webkit-transition: all ease-in-out .3s
+   transition: all ease-in-out .3s
+   background-color: $primary
+   z-index: 100
+   font-size: 1.5em
+   height: 100vh
+   position: absolute
+   top: 0
+   left: -75px
+   width: 75px
+   .brand
+      color: $lightwhite
+      text-decoration: none
+      display: block
+      margin: 20px 2.5px
+      img
+         border-radius: 50%
+         height: 68px
+         width: 68px
+   ul
+      margin: 20px 0
+      li   
+         height: 60px 
+         width: 60px
+         margin: 0 auto
+         position: relative
+         .nav-icon-title
+            position: absolute
+            top: 25%
+            right: 0
+            color: $lightwhite
+            background: $darkwhite
+            color: #ffffff
+            opacity: 0
+            width: 120px
+         a
+            display: block
+            height: 100%           
+            .nav-icon
+               font-size: 1.5em
+               color: $lightwhite
+               position: absolute
+               top: 50%
+               left: 50%
+               transform: translate(-50%, -50%)
+               &:hover
+                  color: $darkwhite
+//social media links
+.socialmedia-links
+   -moz-transition: all ease-in-out .3s
+   -o-transition: all ease-in-out .3s
+   -webkit-transition: all ease-in-out .3s
+   transition: all ease-in-out .3s
+   background: #333333
+   color: $lightwhite
+   position: absolute
+   top: 50%
+   right: 0
+   opacity: .7
+   z-index: 1000
+   .media-links:hover
+      background: $darkwhite
+   .media-links
+      width: 60px
+      height: 60px
+      color: $lightwhite
+      font-size: 1.5em
+      position: relative
+      display: block
+      .icon
+         position: absolute
+         top: 50%
+         left: 50%
+         transform: translate(-50%, -50%)
+
+/*------------------------------------
+   content Sections
+   ------------------------------------*/      
+main
+   width: 100%
+   height: 100%  
+.main-section
+   width: 100%
+   height: 100%
+   position: absolute
+   top: 0
+   -o-transition: left ease .5s
+   -moz-transition: left ease .5s
+   -webkit-transition: left ease .5s
+   transition: left ease .5s
+   .wrapper
+      position: absolute
+      color: #333
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      .profile-img
+         display: block
+         margin: 0 auto
+         width: 200px
+         height: 200px
+         border: 5px solid #ffffff
+         border-radius: 50%
+      h1
+         margin-top: 20px
+         font-size: 2em
+         color: #fff
+         text-align: center
+      p
+         text-align: center
+         color: $lightwhite
+         font-weight: 600
+.intro-section
+   left: 0
+   background-image: url('../images/bg-main.jpeg')
+   background-size: cover
+   background-position: center
+   background-repeat: no-repeat
+   background-blend-mode: overlay
+   background-color: rgba(0, 0, 0, 0.8)
+   h2
+      color: $secondary
+   p
+      color: $secondary
+.about-section, .contact-section, .portfolio-section
+   width: 75%
+   height: 75%
+   position: absolute
+   top: 50%
+   left: 50%
+   transform: translate(-50%, -50%)
+.section-title
+   padding-left: 20px
+   text-transform: uppercase
+   color: $sectionTitle
+   font-size: 7em
+   position: relative
+.bot-border
+   border-bottom: 2px solid #333
+/*------------------------------------
+   About Section
+   ------------------------------------*/
+.about-section
+   .about-img
+      margin: 0 auto
+      border-radius: 50%
+      width: 250px
+      height: 250px
+      display: block
+   .about-me-content
+      padding: 0 20px
+      margin-top: 20px
+      p
+         margin: 20px 0
+   .progress-bar-icon
+      color: $darkwhite
+   .progress-bar
+      height: 2px
+      width: 80%
+      margin: 10px 0
+      background: lightgray
+      position: relative
+   .inner-progress-bar
+      height: 2px
+      position: absolute
+      top: 0
+      background: red 
+   .github-btn
+      text-align: center
+      width: 125px
+      margin: 0 auto
+      padding: 8px 10px
+      background-color: $orange
+      color: #ffffff
+      text-decoration: none
+      display: block
+      font-weight: bold
+      -moz-transition: all ease .5s
+      -o-transition: all ease .5s
+      -webkit-transition: all ease .5s
+      transition: all ease .5s
+      &:hover
+         background-color: $darkwhite
+         color: white
+/*------------------------------------
+   Portfolio Section
+   ------------------------------------*/
+.main-container
+   width: 80%
+   margin: 0 auto
+   .content-container
+      width: 48%
+      float: left
+      margin: 1%
+      .content
+         position: relative
+         margin: auto
+         overflow: hidden
+         &:hover 
+            .content-details
+               top: 50%
+               left: 50%
+               opacity: 1
+            .content-overlay
+               opacity: .7
+            .content-img
+               -webkit-transition: all 0.4s ease-in-out 0.3s
+               -moz-transition: all 0.4s ease-in-out 0.3s
+               -o-transition: all 0.4s ease-in-out 0.3s
+               transition: all 0.4s ease-in-out 0.3s   
+               transform: scale(1.5)
+         .enlarge-img
+            position: absolute
+            width: 100%
+            height: 100%
+            top: 0
+            left: 0
+            z-index: 100
+         .content-img
+            display: block
+         .content-overlay 
+            background: rgba(0,0,0,0.7)
+            position: absolute
+            height: 100%
+            width: 100%
+            left: 0
+            top: 0
+            bottom: 0
+            right: 0
+            opacity: 0
+            -webkit-transition: all 0.4s ease-in-out 0s
+            -moz-transition: all 0.4s ease-in-out 0s
+            -o-transition: all 0.4s ease-in-out 0s
+            transition: all 0.4s ease-in-out 0s          
+         .content-details
+            position: absolute
+            text-align: center
+            padding-left: 1em
+            padding-right: 1em
+            width: 100%
+            top: 50%
+            left: 50%
+            opacity: 0
+            -webkit-transform: translate(-50%, -50%)
+            -moz-transform: translate(-50%, -50%)
+            transform: translate(-50%, -50%)
+            -webkit-transition: all 0.3s ease-in-out 0s
+            -moz-transition: all 0.3s ease-in-out 0s
+            -o-transition: all 0.4s ease-in-out 0s
+            transition: all 0.3s ease-in-out 0s
+            h3
+               color: #fff
+               font-weight: 500
+               letter-spacing: 0.15em
+               margin-bottom: 0.5em
+               text-transform: uppercase                     
+         .fadeIn-left
+            left: 20%
+
+/*------------------------------------
+   Contact Section
+   ------------------------------------*/                 
+.contact-section
+   .col
+      margin: 0 auto
+      float: none
+      .contact-form
+         padding: 20px
+         .con-form
+            width: 100%
+            border: none
+            box-shadow: 0px 0px 9px 0px #c5c5c5
+            margin-bottom: 20px
+            padding: 20px
+         label
+            font-size: 1.25em
+            font-weight: bold          
+         input[type=text], select, textarea 
+            width: 100%
+            padding: 12px
+            border: 1px solid #ccc
+            border-radius: 4px
+            box-sizing: border-box
+            margin-top: 6px
+            margin-bottom: 16px
+            resize: vertical
+         .submit-btn
+            -moz-transition: all ease .5s
+            -o-transition: all ease .5s
+            -webkit-transition: all ease .5s
+            transition: all ease .5s
+            background-color: $orange
+            color: white
+            padding: 12px 20px
+            width: 125px
+            border: none
+            cursor: pointer
+            &:hover 
+               background-color: $darkwhite
+
+@media only screen and (max-width: 1250px)
+   .about-section, .portfolio-section, .contact-section
+      width: 100%
+      height: 100%
+@media only screen and (max-width: 850px)
+   .col
+      width: 80%
+   .section-title
+      font-size: 5em
+   .about-section
+      .col
+         width: 100%
+         .about-me-content
+            p
+               font-size: 1.25em
+   .portfolio-section
+      .main-container
+         width: 100%
+         h3
+            font-size: 1em
+@media only screen and (max-width: 550px)
+   nav
+      width: 60px
+      font-size: .75em
+      ul
+         li
+            .nav-icon-title
+               width: 100px   
+      .brand 
+         img
+            height: 53px 
+            width: 53px
+   .section-title
+         font-size: 3.5em
+   .col
+      width: 100%
+      padding: 0
+   section 
+      display: block
+      position: relative
+      width: 100%
+      height: 500px
+      left: 0
+   .about-section
+      .about-img
+         width: 150px
+         height: 150px
+      .col
+         padding: 20px
+         .about-me-content
+            p 
+               font-size: .75em
+   .portfolio-section
+      .main-container
+         width: 100%
+         .content-container
+            width: 100%
+            float: none
+            margin: 0
+            padding: 2px
+            box-sizing: border-box
