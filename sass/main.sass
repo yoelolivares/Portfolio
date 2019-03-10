@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans')
 
 //colors
-$primary: #27455b
+$primary: #ffd500
 $secondary: #333333
 $sectionTitle: rgba(173, 173, 173, 0.28)
 $lightwhite: #c4c5c5
 $darkwhite: #adadad
 $orange: #ff6800
+$darkgray: #242424
    
    
 *
@@ -66,91 +67,102 @@ html.is-animating .transition-left
 /*------------------------------------
    Navigation
    ------------------------------------*/
-.nav-btn-wrapper
-   position: absolute
-   top: 10px
-   right: 10px
-   cursor: pointer
-   z-index: 9000
-   .nav-btn 
-      width: 50px
-      height: 50px
-      position: relative
-   .line 
-      position: absolute 
-      height: 3px 
-      width: 100% 
-      background: #11496d 
-      transition: all cubic-bezier(0.26, 0.1, 0.27, 1.55) 0.35s 
-      &.switch 
-         background: #CACBCC 
-   .top 
-      top: 18% 
-   .middle 
-      top: 48% 
-   .bottom 
-      top: 78% 
-   .icon 
-      &.close 
-         .top 
-            transform: rotate(45deg) 
-            top: 48% 
-   .icon.close .middle, .icon.close .bottom 
-      transform: rotate(-45deg) 
-      top: 48%
-.right
-   left: 0
-nav
-   -moz-transition: all ease-in-out .3s
-   -o-transition: all ease-in-out .3s
-   -webkit-transition: all ease-in-out .3s
-   transition: all ease-in-out .3s
-   background-color: $primary
-   z-index: 100
-   font-size: 1.5em
-   height: 100vh
-   position: absolute
-   top: 0
-   left: -75px
-   width: 75px
-   .brand
-      color: $lightwhite
-      text-decoration: none
-      display: block
-      margin: 20px 2.5px
-      img
-         border-radius: 50%
-         height: 68px
-         width: 68px
-   ul
-      margin: 20px 0
-      li   
-         height: 60px 
-         width: 60px
-         margin: 0 auto
-         position: relative
-         .nav-icon-title
-            position: absolute
-            top: 25%
-            right: 0
-            color: $lightwhite
-            background: $darkwhite
-            color: #ffffff
-            opacity: 0
-            width: 120px
-         a
-            display: block
-            height: 100%           
-            .nav-icon
-               font-size: 1.5em
-               color: $lightwhite
+header
+   .nav-btn-wrapper
+      position: absolute
+      top: 10px
+      right: 10px
+      cursor: pointer
+      z-index: 9000
+      &:hover
+         .line
+            background: $darkgray
+      .nav-btn 
+         width: 50px
+         height: 50px
+         position: relative        
+      .line 
+         position: absolute 
+         height: 3px 
+         width: 100% 
+         background: $orange 
+         transition: all cubic-bezier(0.26, 0.1, 0.27, 1.55) 0.35s 
+         &.switch 
+            background: $darkgray
+      .top 
+         top: 18% 
+      .middle 
+         top: 48% 
+      .bottom 
+         top: 78% 
+      .icon 
+         &.close 
+            .top 
+               transform: rotate(45deg) 
+               top: 48% 
+      .icon.close .middle, .icon.close .bottom 
+         transform: rotate(-45deg) 
+         top: 48%
+   .right
+      left: 0
+   nav
+      -moz-transition: all ease-in-out .3s
+      -o-transition: all ease-in-out .3s
+      -webkit-transition: all ease-in-out .3s
+      transition: all ease-in-out .3s
+      background-color: $darkgray
+      z-index: 100
+      font-size: 1.5em
+      height: 100vh
+      position: absolute
+      top: 0
+      left: -75px
+      width: 75px
+      .brand
+         color: $lightwhite
+         text-decoration: none
+         display: block
+         margin: 20px 2.5px
+         img
+            border-radius: 50%
+            height: 68px
+            width: 68px
+      ul
+         margin: 20px 0
+         li   
+            height: 60px 
+            width: 100%
+            margin: 0 auto
+            position: relative
+            .nav-icon-title
+               -moz-transition: all ease-in-out .2s
+               -o-transition: all ease-in-out .2s
+               -webkit-transition: all ease-in-out .2s
+               transition: all ease-in-out .2s
                position: absolute
-               top: 50%
-               left: 50%
-               transform: translate(-50%, -50%)
+               top: 25%
+               right: 0
+               color: $lightwhite
+               opacity: 0
+               width: 120px
+               cursor: default
+            a
+               display: block
+               height: 100%
                &:hover
-                  color: $darkwhite
-//social media links
+                  background: $secondary
+                  .nav-icon
+                     color: #bebebe
+                  .nav-icon-title
+                     opacity: 1
+                     right: -120px
+               .nav-icon
+                  font-size: 1.5em
+                  color: $orange
+                  position: absolute
+                  top: 50%
+                  left: 50%
+                  transform: translate(-50%, -50%)
 .socialmedia-links
    -moz-transition: all ease-in-out .3s
    -o-transition: all ease-in-out .3s
@@ -161,10 +173,7 @@ nav
    position: absolute
    top: 50%
    right: 0
-   opacity: .7
    z-index: 1000
-   .media-links:hover
-      background: $darkwhite
    .media-links
       width: 60px
       height: 60px
@@ -172,11 +181,17 @@ nav
       font-size: 1.5em
       position: relative
       display: block
+      &:hover
+         background: $darkgray
+         .icon
+            color: $lightwhite
       .icon
          position: absolute
+         font-size: 1.2em
          top: 50%
          left: 50%
          transform: translate(-50%, -50%)
+         color: $orange
 
 /*------------------------------------
    content Sections
@@ -217,12 +232,12 @@ main
          font-weight: 600
 .intro-section
    left: 0
-   background-image: url('../images/bg-main.jpeg')
+   background-image: url('../images/woods-bg.jpeg')
    background-size: cover
    background-position: center
    background-repeat: no-repeat
    background-blend-mode: overlay
-   background-color: rgba(0, 0, 0, 0.8)
+   background-color: rgba(0, 0, 0, .4)
    h2
       color: $secondary
    p
@@ -297,6 +312,7 @@ main
       width: 48%
       float: left
       margin: 1%
+      box-shadow: 0px 0px 9px 0px #c5c5c5
       .content
          position: relative
          margin: auto
@@ -439,7 +455,7 @@ main
          font-size: 3.5em
    .col
       width: 100%
-      padding: 0
+      padding: 20px
    section 
       display: block
       position: relative
@@ -458,6 +474,8 @@ main
    .portfolio-section
       .main-container
          width: 100%
+         box-sizing: border-box
+         padding: 20px
          .content-container
             width: 100%
             float: none

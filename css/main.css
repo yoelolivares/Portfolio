@@ -68,46 +68,46 @@ html.is-animating .transition-left {
 /*------------------------------------
  * Navigation
  * ------------------------------------ */
-.nav-btn-wrapper {
+header .nav-btn-wrapper {
   position: absolute;
   top: 10px;
   right: 10px;
   cursor: pointer;
   z-index: 9000; }
-  .nav-btn-wrapper .nav-btn {
+  header .nav-btn-wrapper:hover .line {
+    background: #242424; }
+  header .nav-btn-wrapper .nav-btn {
     width: 50px;
     height: 50px;
     position: relative; }
-  .nav-btn-wrapper .line {
+  header .nav-btn-wrapper .line {
     position: absolute;
     height: 3px;
     width: 100%;
-    background: #11496d;
+    background: #ff6800;
     transition: all cubic-bezier(0.26, 0.1, 0.27, 1.55) 0.35s; }
-    .nav-btn-wrapper .line.switch {
-      background: #CACBCC; }
-  .nav-btn-wrapper .top {
+    header .nav-btn-wrapper .line.switch {
+      background: #242424; }
+  header .nav-btn-wrapper .top {
     top: 18%; }
-  .nav-btn-wrapper .middle {
+  header .nav-btn-wrapper .middle {
     top: 48%; }
-  .nav-btn-wrapper .bottom {
+  header .nav-btn-wrapper .bottom {
     top: 78%; }
-  .nav-btn-wrapper .icon.close .top {
+  header .nav-btn-wrapper .icon.close .top {
     transform: rotate(45deg);
     top: 48%; }
-  .nav-btn-wrapper .icon.close .middle, .nav-btn-wrapper .icon.close .bottom {
+  header .nav-btn-wrapper .icon.close .middle, header .nav-btn-wrapper .icon.close .bottom {
     transform: rotate(-45deg);
     top: 48%; }
-
-.right {
+header .right {
   left: 0; }
-
-nav {
+header nav {
   -moz-transition: all ease-in-out 0.3s;
   -o-transition: all ease-in-out 0.3s;
   -webkit-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s;
-  background-color: #27455b;
+  background-color: #242424;
   z-index: 100;
   font-size: 1.5em;
   height: 100vh;
@@ -115,43 +115,51 @@ nav {
   top: 0;
   left: -75px;
   width: 75px; }
-  nav .brand {
+  header nav .brand {
     color: #c4c5c5;
     text-decoration: none;
     display: block;
     margin: 20px 2.5px; }
-    nav .brand img {
+    header nav .brand img {
       border-radius: 50%;
       height: 68px;
       width: 68px; }
-  nav ul {
+  header nav ul {
     margin: 20px 0; }
-    nav ul li {
+    header nav ul li {
       height: 60px;
-      width: 60px;
+      width: 100%;
       margin: 0 auto;
       position: relative; }
-      nav ul li .nav-icon-title {
+      header nav ul li .nav-icon-title {
+        -moz-transition: all ease-in-out 0.2s;
+        -o-transition: all ease-in-out 0.2s;
+        -webkit-transition: all ease-in-out 0.2s;
+        transition: all ease-in-out 0.2s;
         position: absolute;
         top: 25%;
         right: 0;
         color: #c4c5c5;
-        background: #adadad;
-        color: #ffffff;
         opacity: 0;
-        width: 120px; }
-      nav ul li a {
+        width: 120px;
+        cursor: default; }
+      header nav ul li a {
         display: block;
         height: 100%; }
-        nav ul li a .nav-icon {
+        header nav ul li a:hover {
+          background: #333333; }
+          header nav ul li a:hover .nav-icon {
+            color: #bebebe; }
+          header nav ul li a:hover .nav-icon-title {
+            opacity: 1;
+            right: -120px; }
+        header nav ul li a .nav-icon {
           font-size: 1.5em;
-          color: #c4c5c5;
+          color: #ff6800;
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%); }
-          nav ul li a .nav-icon:hover {
-            color: #adadad; }
 
 .socialmedia-links {
   -moz-transition: all ease-in-out 0.3s;
@@ -163,10 +171,7 @@ nav {
   position: absolute;
   top: 50%;
   right: 0;
-  opacity: 0.7;
   z-index: 1000; }
-  .socialmedia-links .media-links:hover {
-    background: #adadad; }
   .socialmedia-links .media-links {
     width: 60px;
     height: 60px;
@@ -174,11 +179,17 @@ nav {
     font-size: 1.5em;
     position: relative;
     display: block; }
+    .socialmedia-links .media-links:hover {
+      background: #242424; }
+      .socialmedia-links .media-links:hover .icon {
+        color: #c4c5c5; }
     .socialmedia-links .media-links .icon {
       position: absolute;
+      font-size: 1.2em;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%); }
+      transform: translate(-50%, -50%);
+      color: #ff6800; }
 
 /*------------------------------------
  * content Sections
@@ -221,12 +232,12 @@ main {
 
 .intro-section {
   left: 0;
-  background-image: url("../images/bg-main.jpeg");
+  background-image: url("../images/woods-bg.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-blend-mode: overlay;
-  background-color: rgba(0, 0, 0, 0.8); }
+  background-color: rgba(0, 0, 0, 0.4); }
   .intro-section h2 {
     color: #333333; }
   .intro-section p {
@@ -304,7 +315,8 @@ main {
   .main-container .content-container {
     width: 48%;
     float: left;
-    margin: 1%; }
+    margin: 1%;
+    box-shadow: 0px 0px 9px 0px #c5c5c5; }
     .main-container .content-container .content {
       position: relative;
       margin: auto;
@@ -444,7 +456,7 @@ main {
 
   .col {
     width: 100%;
-    padding: 0; }
+    padding: 20px; }
 
   section {
     display: block;
