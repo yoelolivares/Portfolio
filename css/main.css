@@ -42,29 +42,6 @@ ul {
   padding: 20px;
   box-sizing: border-box; }
 
-.transition-fadeOut {
-  transition: 0.5s;
-  opacity: 1; }
-
-html.is-animating .transition-fadeOut {
-  opacity: 0; }
-
-.transition-fade {
-  transition: 0.4s;
-  opacity: 1; }
-
-html.is-animating .transition-fade {
-  opacity: 0;
-  transform: translateX(-100px); }
-
-.transition-left {
-  transition: 0.4s;
-  transform: translateX(0); }
-
-html.is-animating .transition-left {
-  opacity: 0;
-  transform: translateX(-100px); }
-
 /*------------------------------------
  * Navigation
  * ------------------------------------ */
@@ -474,7 +451,9 @@ main {
       font-size: 0.75em; }
 
   .portfolio-section .main-container {
-    width: 100%; }
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px; }
     .portfolio-section .main-container .content-container {
       width: 100%;
       float: none;
