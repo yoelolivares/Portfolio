@@ -119,7 +119,8 @@ header nav {
         color: #c4c5c5;
         opacity: 0;
         width: 120px;
-        cursor: default; }
+        cursor: default;
+        background: #333333; }
       header nav ul li a {
         display: block;
         height: 100%; }
